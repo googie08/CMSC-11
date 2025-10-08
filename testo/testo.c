@@ -22,7 +22,7 @@ int main() {
             printf("%d ", j);
         }
 
-        printf("\n"); // move to next row
+        printf("\n"); // 3move to next row
     }
 
     return 0;
