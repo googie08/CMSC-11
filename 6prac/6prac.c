@@ -1,40 +1,49 @@
 #include <stdio.h>
-int numCounter(int[], int, int, int*);
+
+voidarrayRotate(int*, int, int, int);
+
+
 
 int main() {
-    int numbers[10], toCheck;
-    int SIZE = 0;
-    int *p;
+    //int arr[2][3][2] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+    int [3][3] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int rows = 2;
+    int cols = 3;
+    // int height = 2;
 
-    printf("How many numbers do you want to store (1-10)? ");
-    scanf("%d", &SIZE);
-    printf("\n");
+    int *ptr = arr;
 
-    if (SIZE <= 0 || SIZE > 10) {
-        printf("Invalid Input\n");
-        return 0;
+    /*
+    int i = 1;
+    int j = 1;
+
+    for(i=0; i<rows*cols*height; i++) {
+        printf("%d", *(ptr+i));
     }
+    */
 
-    for (p = numbers; p < numbers + SIZE; p++) {
-        printf("Enter number[%ld]: ", p - numbers + 1);
-        scanf("%d", p);
+    while(1){
+        arrayRotate(ptr, rows, cols);
     }
-
-    printf("\nNumber to Count: ");
-    scanf("%d", &toCheck);
-
-    int count = numCounter(numbers, SIZE, toCheck, p);
-    printf("Instance Count: %d\n", count);
 
     return 0;
 }
 
-int numCounter(int numbers[], int SIZE, int toCheck, int *p) {
-    int count = 0;
-    for (p = numbers; p < numbers + SIZE; p++) {
-        if (*p == toCheck) count++;
+void arrayRotate(int *ptr, int rows, int cols, int rotations) {
+    for(int i=0; rot<rotations; rot++) {
+        int last = *(pt+(rows*cols)-1);
+        for (int i=(rows*cols)-1; i>0; i--) {
+            *(ptr+i) = *(ptr+i-1);
+        }
+        *ptr = last;
+        arrayPrinter(ptr, rows, cols);
     }
-    return count;
 }
 
+void arrayPrinter(int *ptr, int rows, int cols, int rotations) {
+    for(int i=0; i<rows*cols; i++) {
+        if (i%(rows) == 0)
+        printf("%d", *(arr+i));
+    }
+}
 
