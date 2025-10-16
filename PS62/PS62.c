@@ -1,12 +1,11 @@
 #include <stdio.h>
-int numCounter(int[], int, int, int*);
+int numCounter(int[], int, int);
 
 int main() {
     int numbers[10], toCheck;
-    int SIZE = 0;
-    int *p;
+    int SIZE = 0, i = 0;
 
-    printf("How many numbers do you want to store (1-10)? ");
+    printf("Enter size(1-10)? ");
     scanf("%d", &SIZE);
     printf("\n");
 
@@ -15,22 +14,24 @@ int main() {
         return 0;
     }
 
-    for (p = numbers; p < numbers + SIZE; p++) {
-        printf("Enter number[%ld]: ", p - numbers + 1);
-        scanf("%d", p);
+    while(i < SIZE){
+        printf("Enter number[%d]: ", i+1);
+        scanf("%d", &numbers[i]);
+        i++;
     }
 
     printf("\nNumber to Count: ");
     scanf("%d", &toCheck);
 
-    int count = numCounter(numbers, SIZE, toCheck, p);
+    int count = numCounter(numbers, SIZE, toCheck);
     printf("Instance Count: %d\n", count);
 
     return 0;
 }
 
-int numCounter(int numbers[], int SIZE, int toCheck, int *p) {
+int numCounter(int numbers[], int SIZE, int toCheck) {
     int count = 0;
+    int *p;
     for (p = numbers; p < numbers + SIZE; p++) {
         if (*p == toCheck) count++;
     }

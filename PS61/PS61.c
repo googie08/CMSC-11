@@ -1,22 +1,22 @@
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int numbers[10];
-    int SIZE = 0, count = 0, valid = 0;
+    int SIZE = 0, i = 0, count = 0;
     int *p;
 
-    printf("How many numbers do you want to store in the array (1-10)? ");
+    printf("Enter size: ");
     scanf("%d", &SIZE);
-    printf("\n");
 
     if (SIZE <= 0 || SIZE > 10) {
-        printf("Invalid Input\n");
+        printf("Invalid size\n");
         return 0;
     }
 
-    for (p = numbers; p < numbers + SIZE; p++) {
-        printf("Enter number[%ld]: ", p - numbers + 1);
-        scanf("%d", p);
+    while (i < SIZE) {
+        printf("Enter number[%d]: ", i + 1);
+        scanf("%d", &numbers[i]);
+        i++;
     }
 
     for (p = numbers; p < numbers + SIZE; p++) {
@@ -29,8 +29,10 @@ int main() {
         }
     }
 
-    if (count == 3 && valid == 0) printf("\nTRUE\n");
-    else printf("\nFALSE\n");
+    if (count == 3)
+        printf("\nTRUE\n");
+    else
+        printf("\nFALSE\n");
 
     return 0;
 }
