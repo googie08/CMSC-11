@@ -53,7 +53,7 @@ int Odd(int *ptr, int length, int i, int *start) {
     int temp = 1;
     int max = 0;
     for (int k = 1; (i - k >= 0) && (i + k < length) && (*(ptr + i - k) == *(ptr + i + k)); k++) {
-        temp += 2;
+        temp = temp + 2;
         if (temp > max) {
             max = temp;
             *start = i - k;
@@ -67,7 +67,7 @@ int Even(int *ptr, int length, int i, int *start) {
     int temp = 0;
     int max = 0;
     for (int k = 0; (i - k >= 0) && (i + 1 + k < length) && (*(ptr + i - k) == *(ptr + i + 1 + k)); k++) {
-        temp += 2;
+        temp = temp + 2;
         if (temp > max) {
             max = temp;
             *start = i - k;
