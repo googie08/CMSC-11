@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1761678929 source:c:\users\merajim\documents\vscode\cmsc-11\game\game.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+

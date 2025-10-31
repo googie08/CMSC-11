@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1761770991 source:c:\users\merajim\documents\vscode\cmsc-11\ps71\ps71.c
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+
