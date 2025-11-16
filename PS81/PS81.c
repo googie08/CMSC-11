@@ -89,8 +89,8 @@ void editEntry(struct PBEntry pb[], int SIZE){
     printf("\n\n-----------------------------------\n\n");
     printf("EDIT ENTRY\n");
     if (SIZE == 0) {
-        printf("\nNo entries found\n");
-        printf("\n\n-----------------------------------\n\n");
+        printf("No entries found\n");
+        printf("\n-----------------------------------\n\n");
         return;
     }
 
@@ -101,7 +101,7 @@ void editEntry(struct PBEntry pb[], int SIZE){
 
     if (i < 0 || i >= SIZE) {
         printf("Invalid entry number\n");
-        printf("\n\n-----------------------------------\n\n");
+        printf("\n-----------------------------------\n\n");
         return;
     }
 
@@ -119,7 +119,7 @@ void editEntry(struct PBEntry pb[], int SIZE){
     printf("New Mobile Number: ");
     scanf("%ld", &pb[i].mobile);
     printf("Entry #%d updated successfully!", i+1);
-    printf("\n\n-----------------------------------\n\n");
+    printf("\n-----------------------------------\n\n");
 }
 
 void showAll(struct PBEntry pb[], int SIZE){
@@ -127,7 +127,7 @@ void showAll(struct PBEntry pb[], int SIZE){
     printf("SHOW ALL ENTRIES");
     if (SIZE == 0) {
         printf("\nNo entries found\n");
-        printf("\n\n-----------------------------------\n\n");
+        printf("\n-----------------------------------\n\n");
         return;
     }
 
@@ -140,5 +140,5 @@ void showAll(struct PBEntry pb[], int SIZE){
         printf("Mobile Number: %ld\n", pb[i].mobile);
     }
 
-    printf("\n\n-----------------------------------\n\n");
+    printf("\n-----------------------------------\n\n");
 }
