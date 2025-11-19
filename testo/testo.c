@@ -1,29 +1,22 @@
 #include <stdio.h>
-
-/* pyramid */
+#include <string.h>
+#include <stdlib.h>
 
 int main() {
-    int n, i, j, space;
+    char str1[100];
+    char str2[100];
+    char *str3;
 
-    printf("Enter the number of rows: ");
-    scanf("%d", &n);
+    printf("String 1: ");
+    scanf("%s", str1);
+    printf("String 2: ");
+    scanf("%s", str2);
 
-    for (i = 1; i <= n; i++) {
-        for (space = 1; space <= n - i; space++) {
-            printf("  ");
-        }
+    strcat(str1,str2);
+    int length=strlen(str1);
 
-        for (j = 1; j <= i; j++) {
-            printf("%d ", j);
-        }
-
-        // Print descending numbers
-        for (j = i - 1; j >= 1; j--) {
-            printf("%d ", j);
-        }
-
-        printf("\n"); // 3move to next row
-    }
-
+    str3 = (char *)malloc((sizeof(char) * length)+1);
+    printf("Output: %s", str3);
+    printf("\nLength: %d", length);
     return 0;
 }
