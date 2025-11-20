@@ -41,9 +41,7 @@ void insert(struct node *current, int val){
 
             current->left = newNode;
         }
-        else {
-            insert(current->left, val);
-        }
+        else insert(current->left, val);
     }
 
     else if(val > current->val){
@@ -55,9 +53,7 @@ void insert(struct node *current, int val){
 
             current->right = newNode;
         }
-        else {
-            insert(current->right, val);
-        }
+        else insert(current->right, val);
     }
 }
 
