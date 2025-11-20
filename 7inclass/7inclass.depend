@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1763618726 source:c:\github\cmsc-11\7inclass\7inclass.c
+	<stdio.h>
+	<stdlib.h>
+
